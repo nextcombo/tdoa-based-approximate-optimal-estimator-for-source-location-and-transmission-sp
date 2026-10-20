@@ -1,0 +1,29 @@
+# TDOA-based Approximate Optimal Estimator for Source Location and Transmission Speed [with MATLAB Code]
+
+Introduction  
+Localization of source code is one of the fundamental tasks in many applications and services, attracting considerable attention over the past few decades [1], [2], [3]. Generally, sources are located by extracting parameters from transmitted signals, such as Time of Arrival (TOA), Time Difference of Arrival (TDOA), or Angle of Arrival (AOA) [3], [4], [5], [6], [7], [8]. Among them, TDOA is probably the most popular for uncooperative localization because it has high accuracy and does not require synchronization with the source [8], [9], [10], [11].
+The propagation speed of electromagnetic signals is referred to as the speed of light, which is almost constant in free space. However, the range of propagation for electromagnetic signals in certain environments is very limited, such as underwater conditions where acoustic-based systems have their own advantages. The propagation speed of sound varies with water temperature and density, naturally making the signal speed an unknown quantity. Early studies [12] used TDOA (Time Difference of Arrival) to obtain closed-form solutions for source position and propagation speed, but the accuracy was not ideal. To improve performance, Zheng et al. [13] applied the multi-level idea from [9] to derive a three-stage weighted LS (3SWLS) solution. In the 2-D case, the MSE of the 3SWLS approximates the CRLB. Zhang et al. [14] also extended the two-stage method from [9] to use TDOA and arrival frequency difference (FDOA) measurements to solve the problem, but the performance remained suboptimal. Zhu et al. [15] developed a bi-iterative estimator (BIE), which iteratively obtains both the source position and propagation speed through alternating steps. Although the BIE achieved good performance, it was computationally intensive because each iteration involves a semidefinite programming (SDP) problem solved by CVX [16]. This work [17] derived a convex optimization solution for non-iterative problems through semidefinite relaxation (SDR) from the maximum likelihood estimator (MLE). Qi et al. [18] used an improved representation of the polar decomposition [11] to solve this problem, where the developed rank-constrained semidefinite programming (RCSDP) solution can achieve CRLB accuracy, provided that the measurement covariance matrix is diagonal.
+The literature provides various methods for joint estimation of source position and propagation speed. However, closed-loop estimators and SDP-based solutions fail to achieve CRLB performance in terms of source position and propagation speed, although they approach it in two dimensions [13], [17] or certain special scenarios [14], [18]. Moreover, the aforementioned methods are only checked through simulation without much theoretical support. To our knowledge, there is no TDOA-based problem algorithm that can be proven analytically to achieve CRLB performance and verified through simulation.
+This letter proposes a new algorithm called Double Null Space Projection (DNSP) for joint estimation of source position and propagation speed, taking into account sensor position errors. The first null space projection eliminates the unknowns related to propagation speed, thereby transforming the original model into a linear equation for source position. The second null space projection removes the quadratic term derived from rough estimates of propagation speed, simplifying the computation. These projections ignore the relationship between actual unknowns and intermediate parameters, hence the solution is suboptimal. A final error compensation step in DNSP applies these relationships to improve accuracy. Theoretical analysis verifies that the proposed algorithm achieves CRLB in MSE under Gaussian noise conditions. Simulations confirm the analytical results and superior performance of the proposed DNSP algorithm over existing methods.
+The contributions of this letter include:
+A new formula for joint estimation of location and propagation speed, utilizing null space projections to eliminate interference parameters in pseudo-linear equations, leading to closed-form solutions.
+Theoretical mean square error (MSE) analysis of location and propagation speed estimation under Gaussian and mild measurement noise conditions achieves CRLB.
+Simulation verification of DNSP's accuracy and computational load surpasses existing methods.
+Figures included in the article.
+Conclusion
+We propose a new closed-form solution for positioning based on TDOA in the case of unknown propagation speed. The proposed method continuously projects the pseudo-linear equation into the null space of intermediate parameters to obtain rough estimates of source position and propagation speed. The error compensation step reduces the MSE to CRLB levels, which has been verified through both analytical and numerical analysis. The proposed DNSP outperforms existing methods in terms of performance and effectiveness. Simulation results show detailed results for performance and computational complexity. DNSP achieves MSE and bias at the level of MLE but with comparable processing time to other closed-form solutions. The proposed solution is executed in multiple stages. Another option could be to solve the problem in one stage, for example, by using the Generalized Trust Region Subproblem (GTRS). This might be an interesting topic for future research.
+End
+
+## Images
+
+![(TDOA)Approximate Optimal Estimator of Source Location and Transmission Speed Based on TDOA [with MATLAB Code]](01.jpg)
+![(TDOA)Approximate Optimal Estimator of Source Location and Transmission Speed Based on TDOA [with MATLAB Code]](02.jpg)
+
+<!-- PAYMENT_BLOCK -->
+
+## Get this dataset
+
+- Payment link (Stripe): [Buy now](https://buy.stripe.com/3cs8yP7sY87d0vu9AB)
+- Payment QR code: ![Payment QR code](pay.png)
+
+<!-- /PAYMENT_BLOCK -->
